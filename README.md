@@ -19,6 +19,8 @@ The common solution is to create a cron job that schedule that task.
 An alternative solution is to use the advanced feature Supervisord Listeners
 * http://supervisord.org/events.html#configuring-an-event-listener
 
+supervisord_listener_state-diagram.jpg![image](https://user-images.githubusercontent.com/24995532/112201105-4d446900-8be6-11eb-84aa-be3719cb7bd7.png)
+
 
 #### **Supervisord Event Listener implementation using PHP.**
  
