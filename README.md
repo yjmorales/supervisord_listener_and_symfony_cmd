@@ -1,16 +1,17 @@
 # Supervisord listener and symfony command. 
 
-[Supervisor] [http://supervisord.org/] is a client/server system that allows its users to monitor and control a 
+[Supervisor] [http://supervisord.org/] 
+is a client/server system that allows to monitor and control a 
 number of processes on UNIX-like operating systems.
 
 The intention of this project is to create a Supervisord Listener written in PHP that schedule a task execution. 
 In this case the task is the execution of a Symfony Command Application. 
 
 ### Problem
-It's needed to execute 10 times a task within a week. Once execution every 10 minutes. 
+The execution 10 times a task within a week. Once execution every 10 minutes. 
  
 ### Solution with cron jobs
-The common solution is to create a cron job that schedule that task.  
+The common/ideal solution is to create a cron job that schedule that task.   
 
         Out of the target of this project 
     
@@ -22,10 +23,10 @@ An alternative solution is to use the advanced feature Supervisord Listeners
 
 #### **Supervisord Event Listener implementation using PHP.**
  
-  That schedule can be done using Supervisord TICK_60 event which is defined as (...) _an event type that may be 
+  The scheduling can be done using Supervisord TICK_60 event which is defined as (...) _an event type that may be 
   subscribed to for event listeners to receive “wake-up” notifications every 60 seconds_ (...)
  
-  Currently Supervisord only supports TICK_5 (each 5 seconds), TICK_60 (each 60 seconds or 1 minute), TICK_3600 (each
+  Currently, Supervisord only supports TICK_5 (each 5 seconds), TICK_60 (each 60 seconds or 1 minute), TICK_3600 (each
   3600 seconds or 1 hour). The selected one to subscribe is **TICK_60** event because it's the closer 
   one to the frequency of 10 minutes (600 seconds).
  
